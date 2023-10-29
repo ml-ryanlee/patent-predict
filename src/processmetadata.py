@@ -5,7 +5,7 @@ import glob
 import pandas as pd
 import numpy as np
 
-# counters, move up to global variables (?)
+# counters, global variables
 examiner_id_counter = {}
 examiner_allowance_counter = {}
 class_counter = {}
