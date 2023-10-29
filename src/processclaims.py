@@ -11,7 +11,7 @@ xml_counter = 0
 
 def main():
   # create a pandas dataframe from csv with labels
-  df = pd.read_csv('../data/applabels-2000-2012.csv')
+  df = pd.read_csv('../data/application_metadata.csv')
   df.columns = ['doc-id','status']
 
   # get filepaths of all *.xml files 
