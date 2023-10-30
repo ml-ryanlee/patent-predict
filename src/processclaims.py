@@ -11,8 +11,8 @@ xml_counter = 0
 
 def main():
   # create a pandas dataframe from csv with labels
-  df = pd.read_csv('../data/application_metadata.csv')
-  df.columns = ['doc-id','status']
+  meta_df = pd.read_csv('../data/application_metadata.csv')
+  df = meta_df[['doc-id','status']].copy()
 
   # get filepaths of all *.xml files 
   docspath = os.path.abspath(os.path.join(os.getcwd(), os.pardir))+'/data/docs2005'
@@ -51,7 +51,7 @@ def main():
       claims_dict[id_match] = claimstext
   
   # Generate an ordered csv file with text (col0) to label (col1)
-  df['claims'] = df['doc-id'].apply(lambda x: claims_dict.get(x,np.nan))
+  df.loc[:,'claims'] = df['doc-id'].apply(lambda x: claims_dict.get(x,np.nan))
 
   # Create a filtered dataframe and save it to csv
   claims_df = df.dropna(subset=['doc-id','status','claims'])
@@ -65,8 +65,7 @@ def main():
   # Save labeled dataset to csv
   csv_filename = csvpath+'/text_patentability_data.csv'
   claims_df.to_csv(csv_filename, index=False)
-  print('CHECK2: verify claims is of type int64:',claims_df.status.dtype)
-  print('CHECK3: distribution of each label:\n'+str(claims_df.status.value_counts()))
+  print('CHECK2: distribution of each label:\n'+str(claims_df.status.value_counts()))
 
 def split_xml(input_file, output_directory):
     global xml_counter
