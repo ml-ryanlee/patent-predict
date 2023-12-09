@@ -1,6 +1,6 @@
 # patent-predict
 
-Predicting whether a patent will be granted based on text and numerical information (number of words in claim, patent agent experience)
+Predicting whether a patent will be granted based on text and numerical information (number of words in claim, patent agent experience) [View the PDF](https://github.com/ml-ryanlee/patent-predict/blob/ff55373de0355a4df56646350b8cd3af76bade64/Patent_Approval_Prediction.pdf)
 
 ## Generating the text and numerical (metadata) datasets
 
