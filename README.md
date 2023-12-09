@@ -14,7 +14,7 @@ Predicting whether a patent will be granted based on images, text, and metadata
 ## Set-up Text dataset for Transformer Model Notebooks
 Transformer models are fine-tuned on Google Collab. To navigate to them, go to notebooks. Copy these notebooks to your Google Drive and follow the below instructions.
 1. Move the text_patentability_data.csv from src/data to a subfolder in Google drive labeled data
-2. Run preprocess.ipynb code on Google Collab to generate the text_df_all.csv dataset for training the models. Simply removes (canceled) keyword and "pending" examples
+2. Run preprocess.ipynb code on Google Collab to generate the text_df.csv dataset for training the models. Simply removes (canceled) keyword and "pending" examples
 3. To generate dataset with an "abstracts" column, run bart.ipynb, which will use BART to create an abstractive summary of the claims text
 
 ## Running Fine-tune Model Code (BERT, RoBERTa, BigBird, LongFormer, GPT2)
