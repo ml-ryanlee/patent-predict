@@ -1,5 +1,5 @@
 # patent-predict
-Predicting whether a patent will be granted based on images, text, and metadata
+Predicting whether a patent will be granted based on text and numerical information (number of words in claim, patent agent experience)
 
 ## Generating the text and numerical (metadata) datasets
 1. Upload PatEx dataset to src/data
