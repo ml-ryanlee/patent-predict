@@ -19,6 +19,6 @@ Transformer models are fine-tuned on Google Collab. To navigate to them, go to n
 
 # Running Fine-tune Model Code (BERT, RoBERTa, BigBird, LongFormer, GPT2)
 1. BigBird and RoBERTa require the use of an A100 GPU, due to the memory requirements, available through Google Collab Pro
-2. For BERT, RoBERTa, BigBird, a custom Pytorch dataset was defined. There are two lines of code, shown below, to enable fine-tuning on claims or the abstractive summaries. 
-        #text = self.data_frame.iloc[idx]['claims']
-        text = self.data_frame.iloc[idx]['abstracts']
+2. For BERT, RoBERTa, BigBird, a custom Pytorch dataset was defined. There are two lines of code, shown below, to enable fine-tuning on claims or the abstractive summaries. Comment out the definition of the text data that is not used to fine-tune. 
+- #text = self.data_frame.iloc[idx]['claims'] #using abstracts not claims
+- text = self.data_frame.iloc[idx]['abstracts']
